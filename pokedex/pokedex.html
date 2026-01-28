@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title> <!--Meta charset helps browser read special characters.-->
+    <link rel="stylesheet" href="pokedex.css">
+</head>
+
+<body>
+
+<!--title-->
+  <header class="site-header">
+    <h1 class="app-title" id="home-btn">
+      <img src="LOGO.png" alt="Pokédex Logo" class="logo-img">
+    Pokédex
+    </h1>
+  </header>
+
+
+<!--search section-->
+    <nav class="search-bar">
+    <input 
+      id="search-input" 
+      class="search-input"
+      type="text" 
+      placeholder="Search Pokémon"
+    >
+    <button 
+      id="search-btn" 
+      class="search-btn">
+      Search
+    </button>
+
+    <button 
+      id="back-list-btn" 
+      class="back-btn"
+      style="display:none;">
+      ⬅ Back
+  </button>
+  </nav>
+
+<!--main content-->
+    <main class="main-content">
+      <div class="pokemon-container" id="pokemon-container"></div>
+      <div class="modal"  id="modal">
+         <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn" type="button">✖</button>
+            <div class="modal-body" id="modal-body">              
+            </div>
+         </div> 
+      </div>
+    </main>
+
+<!--footer --> 
+  <footer class="site-footer">
+  <div class="footer-content">
+
+    <p class="footer-name">
+      👨‍💻 Developed by <strong>Shivam Brajraj</strong>
+    </p>
+
+    <p class="footer-contact">
+      📞 Contact: <span>+91-8002399401</span>
+    </p>
+
+    <p class="footer-links">
+      📧 Email:
+      <a href="mailto:shivambrajraj@gmail.com" target="_blank">
+        shivambrajraj@gmail.com
+      </a>
+    </p>
+
+    <p class="footer-links">
+      💼 LinkedIn:
+      <a href="https://www.linkedin.com/in/shivam-brajraj"
+         target="_blank" rel="noopener noreferrer">
+        https://www.linkedin.com/in/shivam-brajraj
+      </a>
+    </p>
+
+    <p class="footer-extra">
+      🚀 Powered by PokéAPI | Built with HTML, CSS & JavaScript
+    </p>
+    <p>© 2026 Shivam</p>
+
+  </div>
+</footer>
+
+
+    
+
+   <script src="pokedex.js"></script>
+    
+</body>
+</html>

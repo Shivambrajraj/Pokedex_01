@@ -1,0 +1,297 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+    font-family: helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+body{
+    background-color:#2b2b2b;
+    color: white;
+}
+.site-header{
+    text-align: center;
+    background-color: hsl(0, 90%, 68%);
+    padding: 70px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    border-radius: 5px;
+}
+.app-title{
+    display: flex;              
+    flex-direction: row;        
+    align-items: center;       
+    justify-content: center;    
+    gap: 12px;                 
+    font-size: 48px;
+    font-family: "Pocket Monk", Helvetica;
+    letter-spacing: 3px;
+    cursor: pointer;
+    color: black;
+}
+.logo-img{
+    width:100px;
+    height:80px;
+    display: inline-block;
+}
+#home-btn {
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#home-btn:hover {
+    color: rgb(56, 55, 55);
+    transform: scale(1.05);
+}
+
+.search-bar{
+    margin-top: 20px;
+    text-align: center;
+}
+.search-input{
+    text-align: center;
+    width: 350px;
+    height: 40px;
+    margin: 5px;
+    padding: 6px 6px ;
+    font-size: 18px;
+    color: #242424;
+    background-color: #c0bfbf;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.search-input::placeholder {
+  color: #ddd;
+}
+.search-input:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+.search-btn{
+    text-align: center;
+    width:65px;
+    height: 30px;
+    font-size: 15px;
+    color:white;
+    background-color:#919194;
+    border: 1px solid rgb(24, 24, 24);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.search-btn:hover {
+   background-color: #ff4c4c;
+   transform: scale(1.05);
+}
+.back-btn{
+    text-align: center;
+    width:75px;
+    height: 30px;
+    margin-left: 100px;
+    font-size: 15px;
+    color:white;
+    background-color:#414150;
+    border: 1px solid rgb(24, 24, 24);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.back-btn:hover {
+    background-color: #e66026; 
+    transform: scale(1.1);     
+}
+.main-content{
+    padding: 1.5em;  
+}
+.pokemon-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+    gap: 1.4rem;
+}
+.card {
+    position: relative;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 1rem;  /*adding space inside the card*/
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:35%;
+    background:var(--type-color,#ccc);
+}
+.card::after {
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:65%;
+    background-color:#666;
+}
+.card * {
+    position: relative;
+    z-index: 1;
+}
+.card img {
+    width: 180px;
+    height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+.types {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+.type {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+}
+
+
+.fire { background: #f08030; }
+.water { background: #6890f0; }
+.grass { background: #78c850; }
+.electric { background: #f8d030; }
+.ice { background: #98d8d8; }
+.fighting { background: #c03028; }
+.poison { background: #a040a0; }
+.ground { background: #e0c068; }
+.flying { background: #a890f0; }
+.psychic { background: #f85888; }
+.bug { background: #a8b820; }
+.rock { background: #b8a038; }
+.ghost { background: #705898; }
+.dark { background: #705848; }
+.dragon { background: #7038f8; }
+.steel { background: #b8b8d0; }
+.fairy { background: #ee99ac; }
+.normal { background: #a8a878; }
+
+
+.card[data-type="fire"] { --type-color: #efa169; }
+.card[data-type="water"] { --type-color: #87a4ea; }
+.card[data-type="grass"] { --type-color: #78c850; }
+.card[data-type="electric"] { --type-color: #f4db76; }
+.card[data-type="ice"] { --type-color: #a6dada; }
+.card[data-type="fighting"] { --type-color: #d25c56; }
+.card[data-type="poison"] { --type-color: #bb6dbb; }
+.card[data-type="ground"] { --type-color: #b67151; }
+.card[data-type="flying"] { --type-color: #cebff8; }
+.card[data-type="psychic"] { --type-color: #cf718d; }
+.card[data-type="bug"] { --type-color: #a8b820; }
+.card[data-type="rock"] { --type-color: #b8a038; }
+.card[data-type="ghost"] { --type-color: #624b86; }
+.card[data-type="dark"] { --type-color: #695b51; }
+.card[data-type="dragon"] { --type-color: #7844f1; }
+.card[data-type="steel"] { --type-color: #c0c0c0; }
+.card[data-type="fairy"] { --type-color: #ff93ab; }
+.card[data-type="normal"] { --type-color: #c0c087; }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(50, 49, 49, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.modal-content{
+    background: #413a3a;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 90%; /*related to modal*/
+    max-width: 420px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.modal-content img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-close {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: white;
+}
+@media (max-width: 600px) {    /* apply these rules only when...*/
+   .search-input {
+     width: 200px;
+   }
+
+   .card img {
+     width: 150px;
+     height: 150px;
+   }
+}
+
+.site-footer {
+    background-color: #473e3e;
+    color: #ddd;
+    padding: 25px 15px;
+    text-align: center;
+    border-top: 3px solid #ff4c4c;
+    margin-top: 50px;
+}
+
+.footer-content p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: #ffb347;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.footer-extra {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+
+
+
+
